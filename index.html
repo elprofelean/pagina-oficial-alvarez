@@ -1,0 +1,1283 @@
+<!doctype html>
+<html lang="es" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Alvarez Group Company - Holding digital multisectorial que impulsa el futuro de los emprendedores con tecnología, educación y servicios innovadores.">
+    <title>Alvarez Group Company | Holding Digital Multisectorial</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#0A1628',
+                        'navy': '#1E3A5F',
+                        'accent-gold': '#D4AF37',
+                        'accent-cyan': '#00D4FF',
+                        'graphite': '#2D3748',
+                        'light-gray': '#F7FAFC'
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-hero {
+            background: linear-gradient(135deg, #0A1628 0%, #1E3A5F 50%, #0A1628 100%);
+        }
+
+        .gradient-accent {
+            background: linear-gradient(90deg, #00D4FF 0%, #D4AF37 100%);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 212, 255, 0.25);
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #00D4FF, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00D4FF, #D4AF37);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-slow {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .section-fade {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-container {
+            background: white;
+            padding: 25px;
+            max-width: 450px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 18px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0056ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #003fcc;
+        }
+
+        .mensaje-exito {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 6px;
+            text-align: center;
+        }
+    </style>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="h-full font-inter bg-deep-blue text-white overflow-x-hidden">
+    <div id="app-wrapper" class="w-full h-full overflow-auto"><!-- Navigation -->
+        <nav id="navbar"
+            class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-deep-blue/90 backdrop-blur-lg border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20"><!-- Logo --> <a href="#inicio"
+                        class="flex items-center space-x-3 group">
+                        <div
+                            class="w-11 h-11 flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                            <img src="logo4.png" alt="Alvarez Group Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div class="hidden sm:block"><span class="font-montserrat font-bold text-lg text-white">Alvarez
+                                Group</span> <span class="block text-xs text-accent-cyan -mt-1">Company</span>
+                        </div>
+                    </a> <!-- Desktop Navigation -->
+                    <div class="hidden lg:flex items-center space-x-8"><a href="#inicio"
+                            class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Inicio</a>
+                        <a href="#nosotros"
+                            class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Nosotros</a>
+                        <a href="#unidades"
+                            class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Unidades</a>
+                        <a href="#comunidad"
+                            class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Comunidad</a>
+                        <a href="#recursos"
+                            class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">E-Learning</a>
+                        <a href="#contacto"
+                            class="px-6 py-2.5 bg-gradient-to-r from-accent-cyan to-accent-gold text-deep-blue font-semibold rounded-full hover:shadow-lg hover:shadow-accent-cyan/30 transition-all transform hover:scale-105">
+                            Contacto </a>
+                    </div><!-- Mobile Menu Button --> <button id="mobile-menu-btn"
+                        class="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg></button>
+                </div>
+            </div><!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden bg-deep-blue/95 backdrop-blur-lg border-t border-white/5">
+                <div class="px-4 py-6 space-y-4"><a href="#inicio"
+                        class="block py-3 text-white/80 hover:text-white transition-colors border-b border-white/5">Inicio</a>
+                    <a href="#nosotros"
+                        class="block py-3 text-white/80 hover:text-white transition-colors border-b border-white/5">Nosotros</a>
+                    <a href="#unidades"
+                        class="block py-3 text-white/80 hover:text-white transition-colors border-b border-white/5">Unidades</a>
+                    <a href="#comunidad"
+                        class="block py-3 text-white/80 hover:text-white transition-colors border-b border-white/5">Comunidad</a>
+                    <a href="#recursos"
+                        class="block py-3 text-white/80 hover:text-white transition-colors border-b border-white/5">E-Learning</a>
+                    <a href="#contacto"
+                        class="block py-3 px-6 bg-gradient-to-r from-accent-cyan to-accent-gold text-deep-blue font-semibold rounded-full text-center">Contacto</a>
+                </div>
+            </div>
+        </nav><!-- Hero Section -->
+        <section id="inicio" class="relative min-h-screen flex items-center gradient-hero grid-pattern overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-20 right-10 w-72 h-72 bg-accent-cyan/10 rounded-full blur-3xl animate-pulse-slow">
+            </div>
+            <div class="absolute bottom-20 left-10 w-96 h-96 bg-accent-gold/10 rounded-full blur-3xl animate-pulse-slow"
+                style="animation-delay: 2s;"></div><!-- Floating Shapes -->
+            <div class="absolute top-1/4 right-1/4 animate-float">
+                <svg class="w-20 h-20 text-accent-cyan/20" viewbox="0 0 100 100" fill="currentColor">
+                    <polygon points="50,5 95,75 5,75" />
+                </svg>
+            </div>
+            <div class="absolute bottom-1/3 left-1/5 animate-float" style="animation-delay: 3s;">
+                <svg class="w-16 h-16 text-accent-gold/20" viewbox="0 0 100 100" fill="currentColor">
+                    <circle cx="50" cy="50" r="45" />
+                </svg>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div
+                            class="inline-flex items-center space-x-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
+                            <span class="w-2 h-2 bg-accent-cyan rounded-full animate-pulse"></span> <span
+                                class="text-sm text-white/70">Holding Digital Multisectorial</span>
+                        </div>
+                        <h1 id="hero-title"
+                            class="font-montserrat text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"><span
+                                class="text-white">Alvarez Group</span> <span class="block text-gradient">Company</span>
+                        </h1>
+                        <p id="hero-subtitle" class="text-lg sm:text-xl text-white/70 leading-relaxed max-w-xl">
+                            Impulsamos el futuro de los emprendedores a través de un ecosistema digital que integra
+                            tecnología, educación y servicios innovadores para transformar ideas en realidades exitosas.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4"><a href="#unidades" id="cta-button"
+                                class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-accent-cyan to-accent-gold text-deep-blue font-bold rounded-full hover:shadow-xl hover:shadow-accent-cyan/30 transition-all transform hover:scale-105">
+                                Conocé nuestras unidades
+                                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg></a> <a href="#nosotros"
+                                class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-full hover:bg-white/5 hover:border-accent-cyan/50 transition-all">
+                                Conocer más </a>
+                        </div><!-- Stats -->
+                        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+                            <div><span class="block text-3xl font-bold text-gradient">4+</span> <span
+                                    class="text-sm text-white/50">Unidades de Negocio</span>
+                            </div>
+                            <div><span class="block text-3xl font-bold text-gradient">100%</span> <span
+                                    class="text-sm text-white/50">Digital</span>
+                            </div>
+                            <div><span class="block text-3xl font-bold text-gradient">∞</span> <span
+                                    class="text-sm text-white/50">Posibilidades</span>
+                            </div>
+                        </div>
+                    </div><!-- Hero Visual -->
+                    <div class="hidden lg:block relative">
+                        <div class="relative w-full aspect-square max-w-lg mx-auto"><!-- Central Element -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div
+                                    class="w-64 h-64 rounded-3xl bg-gradient-to-br from-navy to-deep-blue border border-white/10 glow-effect flex items-center justify-center transform rotate-6 hover:rotate-0 transition-transform duration-500">
+                                    <div class="text-center">
+                                        <div
+                                            class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-accent-cyan to-accent-gold flex items-center justify-center">
+                                            <svg class="w-10 h-10 text-deep-blue" fill="none" stroke="currentColor"
+                                                viewbox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            </svg>
+                                        </div><span
+                                            class="font-montserrat font-bold text-xl text-white">Innovación</span> <span
+                                            class="block text-sm text-white/50">Digital</span>
+                                    </div>
+                                </div>
+                            </div><!-- Orbiting Elements -->
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4">
+                                <div
+                                    class="w-16 h-16 rounded-xl bg-navy/80 border border-accent-cyan/30 flex items-center justify-center animate-float">
+                                    <svg class="w-8 h-8 text-accent-cyan" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-4">
+                                <div class="w-16 h-16 rounded-xl bg-navy/80 border border-accent-gold/30 flex items-center justify-center animate-float"
+                                    style="animation-delay: 1s;">
+                                    <svg class="w-8 h-8 text-accent-gold" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-4">
+                                <div class="w-16 h-16 rounded-xl bg-navy/80 border border-white/20 flex items-center justify-center animate-float"
+                                    style="animation-delay: 2s;">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-4">
+                                <div class="w-16 h-16 rounded-xl bg-navy/80 border border-accent-cyan/30 flex items-center justify-center animate-float"
+                                    style="animation-delay: 3s;">
+                                    <svg class="w-8 h-8 text-accent-cyan" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><a href="#nosotros"
+                    class="flex flex-col items-center text-white/50 hover:text-white/80 transition-colors"> <span
+                        class="text-xs mb-2">Scroll</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg></a>
+            </div>
+        </section><!-- Pillars Section -->
+        <section class="py-20 bg-graphite relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern opacity-30"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16"><span
+                        class="inline-block px-4 py-1 bg-accent-cyan/10 text-accent-cyan text-sm font-medium rounded-full mb-4">Nuestros
+                        Pilares</span>
+                    <h2 class="font-montserrat text-3xl sm:text-4xl font-bold text-white">Lo que nos define</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="group p-8 bg-deep-blue/50 rounded-2xl border border-white/5 hover:border-accent-cyan/30 transition-all card-hover">
+                        <div
+                            class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-accent-cyan/20 to-accent-cyan/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-accent-cyan" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-3">Innovación</h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Desarrollamos soluciones creativas que
+                            anticipan las necesidades del mercado digital.</p>
+                    </div>
+                    <div
+                        class="group p-8 bg-deep-blue/50 rounded-2xl border border-white/5 hover:border-accent-gold/30 transition-all card-hover">
+                        <div
+                            class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-gold/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-accent-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-3">Tecnología</h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Implementamos las últimas herramientas
+                            tecnológicas para potenciar cada proyecto.</p>
+                    </div>
+                    <div
+                        class="group p-8 bg-deep-blue/50 rounded-2xl border border-white/5 hover:border-accent-cyan/30 transition-all card-hover">
+                        <div
+                            class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-accent-cyan/20 to-accent-cyan/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-accent-cyan" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-3">Educación</h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Formamos emprendedores con conocimientos
+                            prácticos y actualizados del mercado.</p>
+                    </div>
+                    <div
+                        class="group p-8 bg-deep-blue/50 rounded-2xl border border-white/5 hover:border-accent-gold/30 transition-all card-hover">
+                        <div
+                            class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-gold/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-accent-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-3">Servicios</h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Ofrecemos consultoría integral para hacer
+                            crecer negocios de forma sostenible.</p>
+                    </div>
+                </div>
+            </div>
+        </section><!-- About Section -->
+        <section id="nosotros" class="py-24 bg-deep-blue relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-navy/30 to-transparent"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div><span
+                            class="inline-block px-4 py-1 bg-accent-gold/10 text-accent-gold text-sm font-medium rounded-full mb-6">Sobre
+                            Nosotros</span>
+                        <h2 class="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Un
+                            ecosistema digital para el <span class="text-gradient">crecimiento</span></h2>
+                        <p class="text-white/70 text-lg leading-relaxed mb-8">Alvarez Group Company nace de la visión de
+                            crear un espacio donde emprendedores, empresas y profesionales encuentren todo lo necesario
+                            para transformar sus ideas en proyectos exitosos.</p>
+                        <p class="text-white/60 leading-relaxed mb-8">Somos un holding digital multisectorial que
+                            integra negocios, educación, tecnología y servicios bajo un mismo ecosistema. Nuestra misión
+                            es democratizar el acceso a herramientas y conocimientos que antes solo estaban disponibles
+                            para grandes corporaciones.</p><!-- Mission & Vision -->
+                        <div class="grid sm:grid-cols-2 gap-6 mb-8">
+                            <div class="p-6 bg-navy/30 rounded-xl border border-white/5">
+                                <div
+                                    class="w-10 h-10 mb-4 rounded-lg bg-accent-cyan/20 flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-accent-cyan" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <h4 class="font-montserrat font-bold text-white mb-2">Misión</h4>
+                                <p id="mission-text" class="text-white/60 text-sm">Empoderar emprendedores con
+                                    herramientas digitales, educación de calidad y servicios integrales.</p>
+                            </div>
+                            <div class="p-6 bg-navy/30 rounded-xl border border-white/5">
+                                <div
+                                    class="w-10 h-10 mb-4 rounded-lg bg-accent-gold/20 flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-accent-gold" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </div>
+                                <h4 class="font-montserrat font-bold text-white mb-2">Visión</h4>
+                                <p id="vision-text" class="text-white/60 text-sm">Ser el holding digital de referencia
+                                    en Latinoamérica para el desarrollo emprendedor.</p>
+                            </div>
+                        </div>
+                    </div><!-- Values Grid -->
+                    <div class="relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-accent-cyan/10 to-accent-gold/10 rounded-3xl blur-2xl">
+                        </div>
+                        <div class="relative bg-navy/50 rounded-3xl p-8 border border-white/10">
+                            <h3 class="font-montserrat font-bold text-2xl text-white mb-8 text-center">Nuestros Valores
+                            </h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div
+                                    class="p-5 bg-deep-blue/50 rounded-xl text-center group hover:bg-deep-blue transition-colors">
+                                    <div
+                                        class="w-12 h-12 mx-auto mb-3 rounded-xl bg-accent-cyan/10 flex items-center justify-center group-hover:bg-accent-cyan/20 transition-colors">
+                                        <span class="text-2xl">💡</span>
+                                    </div>
+                                    <h4 class="font-semibold text-white mb-1">Innovación</h4>
+                                    <p class="text-white/50 text-xs">Pensamos diferente</p>
+                                </div>
+                                <div
+                                    class="p-5 bg-deep-blue/50 rounded-xl text-center group hover:bg-deep-blue transition-colors">
+                                    <div
+                                        class="w-12 h-12 mx-auto mb-3 rounded-xl bg-accent-gold/10 flex items-center justify-center group-hover:bg-accent-gold/20 transition-colors">
+                                        <span class="text-2xl">🤝</span>
+                                    </div>
+                                    <h4 class="font-semibold text-white mb-1">Transparencia</h4>
+                                    <p class="text-white/50 text-xs">Confianza total</p>
+                                </div>
+                                <div
+                                    class="p-5 bg-deep-blue/50 rounded-xl text-center group hover:bg-deep-blue transition-colors">
+                                    <div
+                                        class="w-12 h-12 mx-auto mb-3 rounded-xl bg-accent-cyan/10 flex items-center justify-center group-hover:bg-accent-cyan/20 transition-colors">
+                                        <span class="text-2xl">🌍</span>
+                                    </div>
+                                    <h4 class="font-semibold text-white mb-1">Impacto Social</h4>
+                                    <p class="text-white/50 text-xs">Generamos cambio</p>
+                                </div>
+                                <div
+                                    class="p-5 bg-deep-blue/50 rounded-xl text-center group hover:bg-deep-blue transition-colors">
+                                    <div
+                                        class="w-12 h-12 mx-auto mb-3 rounded-xl bg-accent-gold/10 flex items-center justify-center group-hover:bg-accent-gold/20 transition-colors">
+                                        <span class="text-2xl">📈</span>
+                                    </div>
+                                    <h4 class="font-semibold text-white mb-1">Crecimiento</h4>
+                                    <p class="text-white/50 text-xs">Colaborativo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Business Units Section -->
+        <section id="unidades" class="py-24 bg-graphite relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern opacity-20"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16"><span
+                        class="inline-block px-4 py-1 bg-accent-cyan/10 text-accent-cyan text-sm font-medium rounded-full mb-4">Ecosistema</span>
+                    <h2 class="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Unidades de
+                        Negocio</h2>
+                    <p class="text-white/60 max-w-2xl mx-auto">Cada vertical está diseñada para aportar valor específico
+                        a nuestro ecosistema emprendedor.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8"><!-- Tecnoemprende -->
+                    <div
+                        class="group relative p-8 bg-deep-blue rounded-3xl border border-white/5 overflow-hidden card-hover">
+                        <div
+                            class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-accent-cyan/20 to-transparent rounded-full blur-2xl transform translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-cyan to-accent-cyan/50 flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div><span
+                                    class="px-3 py-1 bg-accent-cyan/10 text-accent-cyan text-xs font-medium rounded-full">Educación
+                                    Digital</span>
+                            </div>
+                            <h3 class="font-montserrat font-bold text-2xl text-white mb-3">Tecnoemprende</h3>
+                            <p class="text-white/60 mb-6 leading-relaxed">Plataforma de educación digital, e-learning y
+                                herramientas prácticas para emprendedores que quieren dominar el mundo digital.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-accent-cyan" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Cursos online especializados
+                                </li>
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-accent-cyan" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Recursos descargables
+                                </li>
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-accent-cyan" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Comunidad de aprendizaje
+                                </li>
+                            </ul><a href="#contacto"
+                                class="inline-flex items-center text-accent-cyan font-semibold hover:underline"> Conocer
+                                más
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg></a>
+                        </div>
+                    </div><!-- Market Emprende -->
+                    <div
+                        class="group relative p-8 bg-deep-blue rounded-3xl border border-white/5 overflow-hidden card-hover">
+                        <div
+                            class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-accent-gold/20 to-transparent rounded-full blur-2xl transform translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-gold to-accent-gold/50 flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                    </svg>
+                                </div><span
+                                    class="px-3 py-1 bg-accent-gold/10 text-accent-gold text-xs font-medium rounded-full">Marketplace</span>
+                            </div>
+                            <h3 class="font-montserrat font-bold text-2xl text-white mb-3">Market Emprende</h3>
+                            <p class="text-white/60 mb-6 leading-relaxed">Marketplace y soluciones comerciales para
+                                emprendedores que buscan vender sus productos y servicios de forma profesional.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-accent-gold" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Tienda online integrada
+                                </li>
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-accent-gold" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Gestión de inventario
+                                </li>
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-accent-gold" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Soluciones de pago
+                                </li>
+                            </ul><a href="#contacto"
+                                class="inline-flex items-center text-accent-gold font-semibold hover:underline"> Conocer
+                                más
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg></a>
+                        </div>
+                    </div><!-- Servicios Digitales -->
+                    <div
+                        class="group relative p-8 bg-deep-blue rounded-3xl border border-white/5 overflow-hidden card-hover">
+                        <div
+                            class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-2xl transform translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-500/50 flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                                    </svg>
+                                </div><span
+                                    class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-medium rounded-full">Consultoría</span>
+                            </div>
+                            <h3 class="font-montserrat font-bold text-2xl text-white mb-3">Servicios Digitales</h3>
+                            <p class="text-white/60 mb-6 leading-relaxed">Consultoría integral en diseño,
+                                automatización, branding y estrategia digital para empresas que buscan destacar.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Diseño y branding
+                                </li>
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Automatización de procesos
+                                </li>
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Estrategia digital
+                                </li>
+                            </ul><a href="#contacto"
+                                class="inline-flex items-center text-purple-400 font-semibold hover:underline"> Conocer
+                                más
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg></a>
+                        </div>
+                    </div><!-- Innovación & Tecnología -->
+                    <div
+                        class="group relative p-8 bg-deep-blue rounded-3xl border border-white/5 overflow-hidden card-hover">
+                        <div
+                            class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full blur-2xl transform translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-500/50 flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div><span
+                                    class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-medium rounded-full">Tech</span>
+                            </div>
+                            <h3 class="font-montserrat font-bold text-2xl text-white mb-3">Innovación &amp; Tecnología
+                            </h3>
+                            <p class="text-white/60 mb-6 leading-relaxed">Desarrollo de proyectos tecnológicos,
+                                software, soluciones con IA y herramientas empresariales de última generación.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-emerald-400" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Desarrollo de software
+                                </li>
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-emerald-400" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Soluciones con IA
+                                </li>
+                                <li class="flex items-center text-white/50 text-sm">
+                                    <svg class="w-4 h-4 mr-2 text-emerald-400" fill="currentColor" viewbox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg> Herramientas empresariales
+                                </li>
+                            </ul><a href="#contacto"
+                                class="inline-flex items-center text-emerald-400 font-semibold hover:underline"> Conocer
+                                más
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Community Section -->
+        <section id="comunidad" class="py-24 bg-deep-blue relative overflow-hidden">
+            <div class="absolute inset-0">
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-accent-cyan/10 to-transparent rounded-full">
+                </div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16"><span
+                        class="inline-block px-4 py-1 bg-accent-gold/10 text-accent-gold text-sm font-medium rounded-full mb-4">Comunidad</span>
+                    <h2 class="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Unite al
+                        ecosistema</h2>
+                    <p class="text-white/60 max-w-2xl mx-auto text-lg">Buscamos emprendedores, profesionales y
+                        visionarios que quieran crecer junto a nosotros.</p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                    <div
+                        class="text-center p-8 bg-navy/30 rounded-3xl border border-white/5 hover:border-accent-cyan/30 transition-colors">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-accent-cyan/20 to-transparent flex items-center justify-center">
+                            <span class="text-4xl">🚀</span>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-3">Emprendedores</h3>
+                        <p class="text-white/60">Si tenés una idea o un proyecto en marcha, te brindamos las
+                            herramientas para llevarlo al siguiente nivel.</p>
+                    </div>
+                    <div
+                        class="text-center p-8 bg-navy/30 rounded-3xl border border-white/5 hover:border-accent-gold/30 transition-colors">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-accent-gold/20 to-transparent flex items-center justify-center">
+                            <span class="text-4xl">💼</span>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-3">Profesionales</h3>
+                        <p class="text-white/60">Buscamos talento en tecnología, diseño, marketing y más para unirse a
+                            nuestro equipo multidisciplinario.</p>
+                    </div>
+                    <div
+                        class="text-center p-8 bg-navy/30 rounded-3xl border border-white/5 hover:border-accent-cyan/30 transition-colors">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-accent-cyan/20 to-transparent flex items-center justify-center">
+                            <span class="text-4xl">🤝</span>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-3">Partners</h3>
+                        <p class="text-white/60">Empresas y organizaciones que quieran colaborar y crear sinergias
+                            dentro de nuestro ecosistema.</p>
+                    </div>
+                </div><!-- CTA Banner -->
+                <div class="relative overflow-hidden rounded-3xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-accent-cyan to-accent-gold opacity-90"></div>
+                    <div class="relative z-10 p-12 text-center">
+                        <h3 class="font-montserrat font-bold text-2xl sm:text-3xl text-deep-blue mb-4">¿Listo para ser
+                            parte del cambio?</h3>
+                        <p class="text-deep-blue/80 mb-8 max-w-xl mx-auto">Completá el formulario y un miembro de
+                            nuestro equipo se pondrá en contacto con vos.</p><a href="#contacto"
+                            class="inline-flex items-center px-8 py-4 bg-deep-blue text-white font-bold rounded-full hover:bg-navy transition-colors transform hover:scale-105">
+                            Quiero unirme
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </section><!-- E-Learning Section -->
+        <section id="recursos" class="py-24 bg-graphite relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern opacity-20"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16"><span
+                        class="inline-block px-4 py-1 bg-accent-cyan/10 text-accent-cyan text-sm font-medium rounded-full mb-4">E-Learning</span>
+                    <h2 class="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Recursos para
+                        crecer</h2>
+                    <p class="text-white/60 max-w-2xl mx-auto">Accedé a cursos, ebooks, guías y actividades diseñadas
+                        para emprendedores.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="group p-6 bg-deep-blue rounded-2xl border border-white/5 hover:border-accent-cyan/30 transition-all card-hover">
+                        <div
+                            class="w-14 h-14 mb-5 rounded-xl bg-accent-cyan/10 flex items-center justify-center group-hover:bg-accent-cyan/20 transition-colors">
+                            <svg class="w-7 h-7 text-accent-cyan" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg text-white mb-2">Cursos Online</h3>
+                        <p class="text-white/50 text-sm mb-4">Formación especializada en negocios digitales y
+                            emprendimiento.</p><span class="text-accent-cyan text-sm font-medium">Próximamente</span>
+                    </div>
+                    <div
+                        class="group p-6 bg-deep-blue rounded-2xl border border-white/5 hover:border-accent-gold/30 transition-all card-hover">
+                        <div
+                            class="w-14 h-14 mb-5 rounded-xl bg-accent-gold/10 flex items-center justify-center group-hover:bg-accent-gold/20 transition-colors">
+                            <svg class="w-7 h-7 text-accent-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg text-white mb-2">Ebooks</h3>
+                        <p class="text-white/50 text-sm mb-4">Guías descargables con estrategias probadas para tu
+                            negocio.</p><span class="text-accent-gold text-sm font-medium">Próximamente</span>
+                    </div>
+                    <div
+                        class="group p-6 bg-deep-blue rounded-2xl border border-white/5 hover:border-purple-500/30 transition-all card-hover">
+                        <div
+                            class="w-14 h-14 mb-5 rounded-xl bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500/20 transition-colors">
+                            <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg text-white mb-2">Actividades</h3>
+                        <p class="text-white/50 text-sm mb-4">Ejercicios prácticos para aplicar lo aprendido en tu
+                            emprendimiento.</p><span class="text-purple-400 text-sm font-medium">Próximamente</span>
+                    </div>
+                    <div
+                        class="group p-6 bg-deep-blue rounded-2xl border border-white/5 hover:border-emerald-500/30 transition-all card-hover">
+                        <div
+                            class="w-14 h-14 mb-5 rounded-xl bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
+                            <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg text-white mb-2">Guías</h3>
+                        <p class="text-white/50 text-sm mb-4">Tutoriales paso a paso para dominar herramientas
+                            digitales.</p><span class="text-emerald-400 text-sm font-medium">Próximamente</span>
+                    </div>
+                </div><!-- Newsletter CTA -->
+                <div class="mt-16 text-center">
+                    <div class="inline-block p-8 bg-deep-blue/50 rounded-3xl border border-white/5">
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-3">¿Querés ser el primero en acceder?
+                        </h3>
+                        <p class="text-white/60 mb-6">Dejanos tu email y te avisamos cuando lancemos nuevos recursos.
+                        </p>
+                        <a href="https://www.instagram.com/alvarezgroupcompany/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="px-6 py-3 bg-gradient-to-r from-accent-cyan to-accent-gold text-deep-blue font-bold rounded-full hover:shadow-lg hover:shadow-accent-cyan/30 transition-all inline-block">
+                            Suscribirme </a>
+                        <p id="newsletter-message" class="mt-4 text-sm text-white/60 hidden"></p>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Contact Section -->
+        <section id="contacto" class="py-24 bg-deep-blue relative overflow-hidden">
+            <div
+                class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-cyan/50 to-transparent">
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div><span
+                            class="inline-block px-4 py-1 bg-accent-gold/10 text-accent-gold text-sm font-medium rounded-full mb-6">Contacto</span>
+                        <h2 class="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Hablemos
+                            de tu <span class="text-gradient">proyecto</span></h2>
+                        <p class="text-white/70 text-lg leading-relaxed mb-8">Estamos listos para escucharte. Ya sea que
+                            busques consultoría, quieras unirte a nuestro ecosistema o tengas alguna consulta, estamos
+                            aquí para ayudarte.</p><!-- Contact Info -->
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-accent-cyan/10 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-white/50 text-sm">Email</p>
+                                    <p class="text-white font-medium">alvarezgroup.oficial@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-accent-gold/10 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-accent-gold" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-white/50 text-sm">Ubicación</p>
+                                    <p class="text-white font-medium">100% Digital - Argentina</p>
+                                </div>
+                            </div>
+                        </div><!-- Social Links -->
+                        <div>
+                            <p class="text-white/50 text-sm mb-4">Seguinos en redes</p>
+                            <div class="flex space-x-4"><a href="https://www.tiktok.com/@leandroalvarez.ar"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="w-12 h-12 rounded-xl bg-navy/50 border border-white/10 flex items-center justify-center hover:border-accent-cyan/50 hover:bg-navy transition-all">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 24 24">
+                                        <path
+                                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                                    </svg></a> <a href="https://www.instagram.com/m/alvarezgroupcompany" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="w-12 h-12 rounded-xl bg-navy/50 border border-white/10 flex items-center justify-center hover:border-accent-cyan/50 hover:bg-navy transition-all">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 24 24">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                    </svg></a> <a href="https://www.facebook.com/profile.php?id=61587331505127"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="w-12 h-12 rounded-xl bg-navy/50 border border-white/10 flex items-center justify-center hover:border-accent-cyan/50 hover:bg-navy transition-all">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 24 24">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    </svg></a>
+                            </div>
+                        </div>
+
+
+                    </div><!-- Contact Form-->
+                    <div class="relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-accent-cyan/10 to-accent-gold/10 rounded-3xl blur-2xl">
+                        </div>
+                        <form id="contact-form" class="relative bg-navy/50 rounded-3xl p-8 border border-white/10">
+                            <h3 class="font-montserrat font-bold text-xl text-white mb-6">Envianos un mensaje</h3>
+                            <div class="space-y-5">
+                                <div><label for="contact-name" class="block text-white/70 text-sm mb-2">Nombre
+                                        completo</label> <input type="text" id="nombre" name="nombre" required
+                                        class="w-full px-4 py-3 bg-deep-blue/50 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:border-accent-cyan/50 transition-colors"
+                                        placeholder="Tu nombre">
+                                </div>
+                                <div><label for="contact-email" class="block text-white/70 text-sm mb-2">Email</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full px-4 py-3 bg-deep-blue/50 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:border-accent-cyan/50 transition-colors"
+                                        placeholder="tu@email.com">
+                                </div>
+                                <!-- <div><label for="contact-subject"
+                                        class="block text-white/70 text-sm mb-2">Asunto</label> <select
+                                        id="contact-subject" name="subject" required
+                                        class="w-full px-4 py-3 bg-deep-blue/50 border border-white/10 rounded-xl text-white focus:outline-none focus:border-accent-cyan/50 transition-colors">
+                                        <option value="" class="bg-deep-blue">Seleccioná una opción</option>
+                                        <option value="consulta" class="bg-deep-blue">Consulta general</option>
+                                        <option value="partnership" class="bg-deep-blue">Partnership / Alianza</option>
+                                        <option value="unirme" class="bg-deep-blue">Quiero unirme al equipo</option>
+                                        <option value="servicios" class="bg-deep-blue">Servicios</option>
+                                        <option value="otro" class="bg-deep-blue">Otro</option>
+                                    </select>
+                                </div> -->
+                                <div><label for="contact-message"
+                                        class="block text-white/70 text-sm mb-2">Mensaje</label> <textarea id="mensaje"
+                                        name="mensaje" rows="4" required
+                                        class="w-full px-4 py-3 bg-deep-blue/50 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:border-accent-cyan/50 transition-colors resize-none"
+                                        placeholder="Contanos sobre tu proyecto o consulta..."></textarea>
+                                </div><button type="button" onclick="enviarFormulario()"
+                                    class="w-full py-4 bg-gradient-to-r from-accent-cyan to-accent-gold text-deep-blue font-bold rounded-xl hover:shadow-lg hover:shadow-accent-cyan/30 transition-all transform hover:scale-[1.02]">
+                                    Enviar mensaje </button>
+                            </div>
+                            <div id="exito" class="mensaje-exito" style="display: none;">¡Mensaje enviado con éxito! Nos
+                                pondremos en contacto pronto.</div>
+                            <p id="contact-message-status" class="mt-4 text-center text-sm hidden"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section><!-- Footer -->
+        <footer class="py-16 bg-graphite border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"><!-- Brand -->
+                    <div class="lg:col-span-2"><a href="#inicio" class="flex items-center space-x-3 mb-6">
+
+                            <div><span class="font-montserrat font-bold text-lg text-white">Alvarez Group</span> <span
+                                    class="block text-xs text-accent-cyan -mt-1">Company</span>
+                            </div>
+                        </a>
+                        <p class="text-white/60 max-w-md mb-6">Holding digital multisectorial dedicado a impulsar
+                            emprendimientos, proyectos y soluciones tecnológicas en múltiples industrias.</p>
+                        <p class="text-white/40 text-sm">© 2026 Alvarez Group Company. Todos los derechos reservados.
+                        </p>
+                    </div><!-- Quick Links -->
+                    <div>
+                        <h4 class="font-montserrat font-bold text-white mb-4">Enlaces rápidos</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#inicio" class="text-white/60 hover:text-white transition-colors">Inicio</a>
+                            </li>
+                            <li><a href="#nosotros"
+                                    class="text-white/60 hover:text-white transition-colors">Nosotros</a></li>
+                            <li><a href="#unidades"
+                                    class="text-white/60 hover:text-white transition-colors">Unidades</a></li>
+                            <li><a href="#comunidad"
+                                    class="text-white/60 hover:text-white transition-colors">Comunidad</a></li>
+                            <li><a href="#recursos"
+                                    class="text-white/60 hover:text-white transition-colors">E-Learning</a></li>
+                        </ul>
+                    </div><!-- Contact -->
+                    <div>
+                        <h4 class="font-montserrat font-bold text-white mb-4">Contacto</h4>
+                        <ul class="space-y-3">
+                            <li class="text-white/60">alvarezgroup.oficial@gmail.com</li>
+                            <li class="text-white/60">Buenos Aires - Argentina</li>
+                        </ul>
+                    </div>
+                </div><!-- Bottom Bar -->
+                <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div class="flex space-x-6"><a href="#"
+                            class="text-white/40 text-sm hover:text-white transition-colors">Términos y Condiciones</a>
+                        <a href="#" class="text-white/40 text-sm hover:text-white transition-colors">Política de
+                            Privacidad</a>
+                    </div>
+                    <div class="flex space-x-4"><a href="https://www.tiktok.com/@leandroalvarez.ar" target="_blank"
+                            rel="noopener noreferrer" class="text-white/40 hover:text-accent-cyan transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                            </svg></a> <a href="https://www.instagram.com/m/alvarezgroupcompany" target="_blank"
+                            rel="noopener noreferrer" class="text-white/40 hover:text-accent-cyan transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg></a> <a href="https://www.facebook.com/profile.php?id=61587331505127" target="_blank"
+                            rel="noopener noreferrer" class="text-white/40 hover:text-accent-cyan transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    --------------------------------------JS--------------------------------------
+    <script>
+
+        // FORMULARIO DE GOOGLE SHEETS
+        function enviarFormulario() {
+            const data = {
+                nombre: document.getElementById("nombre").value,
+                email: document.getElementById("email").value,
+                mensaje: document.getElementById("mensaje").value
+            };
+
+            fetch("https://script.google.com/macros/s/AKfycbxjNZTu3SLk84wa35f5085Xhn2Cq0oeoLIMX3SPng5bL8Kj8Mk2xF7sFh2kcXirCMNLsg/exec", {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+                .then(res => {
+                    document.getElementById("exito").style.display = "block";
+                    document.getElementById("nombre").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("mensaje").value = "";
+                })
+                .catch(err => alert("Error al enviar los datos"));
+        }
+
+        // Default configuration
+        const defaultConfig = {
+            hero_title: 'Alvarez Group Company',
+            hero_subtitle: 'Impulsamos el futuro de los emprendedores a través de un ecosistema digital que integra tecnología, educación y servicios innovadores para transformar ideas en realidades exitosas.',
+            cta_text: 'Conocé nuestras unidades',
+            mission_text: 'Empoderar emprendedores con herramientas digitales, educación de calidad y servicios integrales.',
+            vision_text: 'Ser el holding digital de referencia en Latinoamérica para el desarrollo emprendedor.',
+            primary_color: '#00D4FF',
+            secondary_color: '#D4AF37',
+            background_color: '#0A1628',
+            text_color: '#FFFFFF',
+            surface_color: '#1E3A5F'
+        };
+
+        let config = { ...defaultConfig };
+
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange: async (newConfig) => {
+                    config = { ...config, ...newConfig };
+
+                    // Update hero title
+                    const heroTitle = document.getElementById('hero-title');
+                    if (heroTitle) {
+                        heroTitle.innerHTML = `<span class="text-white">${config.hero_title || defaultConfig.hero_title}</span>`;
+                    }
+
+                    // Update hero subtitle
+                    const heroSubtitle = document.getElementById('hero-subtitle');
+                    if (heroSubtitle) {
+                        heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+                    }
+
+                    // Update CTA button
+                    const ctaButton = document.getElementById('cta-button');
+                    if (ctaButton) {
+                        ctaButton.innerHTML = `${config.cta_text || defaultConfig.cta_text}
+              <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>`;
+                    }
+
+                    // Update mission text
+                    const missionText = document.getElementById('mission-text');
+                    if (missionText) {
+                        missionText.textContent = config.mission_text || defaultConfig.mission_text;
+                    }
+
+                    // Update vision text
+                    const visionText = document.getElementById('vision-text');
+                    if (visionText) {
+                        visionText.textContent = config.vision_text || defaultConfig.vision_text;
+                    }
+
+                    // Apply colors
+                    document.documentElement.style.setProperty('--primary-color', config.primary_color || defaultConfig.primary_color);
+                    document.documentElement.style.setProperty('--secondary-color', config.secondary_color || defaultConfig.secondary_color);
+                },
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                config.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.surface_color || defaultConfig.surface_color,
+                            set: (value) => {
+                                config.surface_color = value;
+                                window.elementSdk.setConfig({ surface_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                config.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.primary_color || defaultConfig.primary_color,
+                            set: (value) => {
+                                config.primary_color = value;
+                                window.elementSdk.setConfig({ primary_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.secondary_color || defaultConfig.secondary_color,
+                            set: (value) => {
+                                config.secondary_color = value;
+                                window.elementSdk.setConfig({ secondary_color: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: undefined,
+                    fontSizeable: undefined
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ['hero_title', config.hero_title || defaultConfig.hero_title],
+                    ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+                    ['cta_text', config.cta_text || defaultConfig.cta_text],
+                    ['mission_text', config.mission_text || defaultConfig.mission_text],
+                    ['vision_text', config.vision_text || defaultConfig.vision_text]
+                ])
+            });
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Contact form handling - REMOVED IN FAVOR OF GOOGLE SHEETS SCRIPT
+        // const contactForm = document.getElementById('contact-form');
+        // const contactMessageStatus = document.getElementById('contact-message-status');
+
+        // Newsletter form handling
+        const newsletterForm = document.getElementById('newsletter-form');
+        const newsletterMessage = document.getElementById('newsletter-message');
+
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('newsletter-email').value;
+
+            // Show success message
+            newsletterMessage.textContent = '¡Gracias por suscribirte! Te mantendremos informado.';
+            newsletterMessage.classList.remove('hidden');
+            newsletterMessage.classList.add('text-accent-cyan');
+
+            // Reset form
+            newsletterForm.reset();
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                newsletterMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9ce96c4d067aee13',t:'MTc3MTIwNjkyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
